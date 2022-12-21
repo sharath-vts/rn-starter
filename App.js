@@ -13,22 +13,38 @@ import TextScreen from "./src/screens/TextScreen";
 import BoxScreen from "./src/screens/BoxScreen";
 import AbsoluteLayoutDemo from "./src/screens/AbsoluteLayoutDemo";
 import LayoutExercise from "./src/screens/LayoutExercise";
+import ContextDemoScreen from "./src/screens/context-demo/ContextDemoScreen";
+import ContextChildOne from "./src/screens/context-demo/ContextChildOne";
+import ContextChildTwo from "./src/screens/context-demo/ContextChildTwo";
+import NameContext, { NameProvider } from "./src/contexts/NameContext";
+import BoxModelDemo from "./src/screens/layout/BoxModelDemo";
+import FlexBoxDemo from "./src/screens/layout/FlexBoxDemo";
+import ContextHome from "./src/screens/context-session/ContextHome";
+import ContextChild from "./src/screens/context-session/ContextChild";
+import { NamesProvider } from "./src/screens/context-session/contexts/NamesContext";
 
 const navigator = createStackNavigator(
   {
     Home: HomeScreen,
-    Component: ComponentsScreen,
-    List: ListScreen,
-    Image: ImageScreen,
-    CounterScreen: CounterScreen,
-    ColorScreen: ColorScreen,
-    SquareScreen: SquareScreen,
-    ColorCounter: ColorCounter,
-    ReducerDemoScreen: ReducerDemoScreen,
-    TextScreen: TextScreen,
-    BoxScreen: BoxScreen,
-    AbsoluteLayoutDemo: AbsoluteLayoutDemo,
-    LayoutExercise: LayoutExercise
+    ContextHome: ContextHome,
+    ContextChild: ContextChild
+    // Component: ComponentsScreen,
+    // List: ListScreen,
+    // Image: ImageScreen,
+    // CounterScreen: CounterScreen,
+    // ColorScreen: ColorScreen,
+    // SquareScreen: SquareScreen,
+    // ColorCounter: ColorCounter,
+    // ReducerDemoScreen: ReducerDemoScreen,
+    // TextScreen: TextScreen,
+    // BoxScreen: BoxScreen,
+    // AbsoluteLayoutDemo: AbsoluteLayoutDemo,
+    // LayoutExercise: LayoutExercise,
+    // ContextDemoScreen: ContextDemoScreen,
+    // ContextChildOne: ContextChildOne,
+    // ContextChildTwo: ContextChildTwo,
+    // BoxModelDemo: BoxModelDemo,
+    // FlexBoxDemo: FlexBoxDemo
   },
   {
     initialRouteName: "Home",
@@ -38,4 +54,9 @@ const navigator = createStackNavigator(
   }
 );
 
-export default createAppContainer(navigator);
+const App = createAppContainer(navigator);
+export default () => {
+  return <NamesProvider>
+    <App />
+  </NamesProvider>
+}

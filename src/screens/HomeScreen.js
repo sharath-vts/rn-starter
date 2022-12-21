@@ -5,6 +5,10 @@ const HomeScreen = ({ navigation}) => {
   return <View>
   <Text style={styles.text}>Hello all</Text>
   <Button
+    title="Goto ContextHome"
+    onPress={() => navigation.navigate("ContextHome")}
+  />
+  {/* <Button
     title="Goto COmpononents"
     onPress={() => navigation.navigate("Component")}
   />
@@ -57,6 +61,20 @@ const HomeScreen = ({ navigation}) => {
     title="Goto LayoutExercise"
     onPress={() => navigation.navigate("LayoutExercise")}>
   </Button>
+
+  <Button 
+    title="Goto ContextDemoScreen"
+    onPress={() => navigation.navigate("ContextDemoScreen")}>
+  </Button>
+
+  <Button 
+    title="Goto BoxModelDemo"
+    onPress={() => navigation.navigate("BoxModelDemo")}>
+  </Button>
+  <Button 
+    title="Goto FlexBoxDemo"
+    onPress={() => navigation.navigate("FlexBoxDemo")}>
+  </Button> */}
   </View>
   
 };
