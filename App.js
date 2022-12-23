@@ -22,12 +22,14 @@ import FlexBoxDemo from "./src/screens/layout/FlexBoxDemo";
 import ContextHome from "./src/screens/context-session/ContextHome";
 import ContextChild from "./src/screens/context-session/ContextChild";
 import { NamesProvider } from "./src/screens/context-session/contexts/NamesContext";
-
+import RealmContext from './src/realm-demo/ContextCreation'
+import TaskHome from "./src/realm-demo/TaskHome";
 const navigator = createStackNavigator(
   {
     Home: HomeScreen,
     ContextHome: ContextHome,
-    ContextChild: ContextChild
+    ContextChild: ContextChild,
+    TaskHome: TaskHome
     // Component: ComponentsScreen,
     // List: ListScreen,
     // Image: ImageScreen,
@@ -55,8 +57,9 @@ const navigator = createStackNavigator(
 );
 
 const App = createAppContainer(navigator);
+const { RealmProvider } = RealmContext;
 export default () => {
-  return <NamesProvider>
+  return <RealmProvider>
     <App />
-  </NamesProvider>
+  </RealmProvider>
 }

@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "module": "es6",
+    "target": "es6",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "strict" : true,
+    "noImplicitAny": false
+  },
+  "extends": "expo/tsconfig.base"
+}
