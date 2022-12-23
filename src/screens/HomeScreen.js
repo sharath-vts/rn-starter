@@ -12,6 +12,10 @@ const HomeScreen = ({ navigation}) => {
     title="Goto Task-Realm"
     onPress={() => navigation.navigate("TaskHome")}
   />
+   <Button
+    title="Goto BoxScreen"
+    onPress={() => navigation.navigate("BoxScreen")}
+  />
   {/* <Button
     title="Goto COmpononents"
     onPress={() => navigation.navigate("Component")}
